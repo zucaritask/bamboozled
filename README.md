@@ -114,7 +114,7 @@ client.employee.photo_binary(employee_id)
 # :end - filter end date
 # :type - type of time off request
 # :status - must be one or more of the following: approved denied superceded requested canceled
-client.time_off.requests(:employeeId: employee_id, start: Time.now)
+client.time_off.requests(:employeeId: employee_id, start: Time.now, end: Time.now + (60*60*24*365))
 
 # See who is out when.
 client.time_off.whos_out(Time.now, "2014-12-31")
